@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="mainpage-host"
+     data-heimdall-trigger="load"
+     data-heimdall-action="main.load-body"
+     data-heimdall-swap="inner">
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="d-flex align-items-center gap-2">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+
+                <div class="text-body-secondary">
+                    Loading Heimdall…
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
