@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="MvcApp/MvcApp.csproj" />
+  <Project Path="HeimdallMvcTemplatePacker/HeimdallMvcTemplatePacker.csproj" />
 </Solution>

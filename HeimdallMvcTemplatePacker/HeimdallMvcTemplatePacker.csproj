@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+
+		<PackageType>Template</PackageType>
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+
+		<PackageId>HeimdallFramework.Templates.MvcApp</PackageId>
+		<Version>2.0.1</Version>
+		<Authors>Bradley Ables</Authors>
+		<Description>Heimdall ASP.NET Core MVC starter template using Razor views, partials, content invocations, safe DOM swapping, and optional SSE.</Description>
+		<PackageTags>heimdall;templates;aspnetcore;mvc;razor;server-driven-ui;html;ssr;hypermedia</PackageTags>
+		<RepositoryUrl>https://github.com/bradleyables22/Heimdall</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>heimdall-128.png</PackageIcon>
+
+		<Deterministic>true</Deterministic>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="..\MvcApp\**\*"
+				 Exclude="..\MvcApp\**\bin\**;
+						  ..\MvcApp\**\obj\**;
+						  ..\MvcApp\**\.vs\**;
+						  ..\MvcApp\**\.git\**;
+						  ..\MvcApp\**\*.user"
+				 Pack="true"
+				 PackagePath="content/" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="heimdall-128.png" Pack="true" PackagePath="\" />
+		<None Include="LICENSE" Pack="true" PackagePath="\" />
+		<None Include="README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Bradley Ables",
+  "classifications": [
+    "Web",
+    "ASP.NET",
+    "MVC",
+    "Razor",
+    "Heimdall",
+    "SSR",
+    "MPA"
+  ],
+  "identity": "Heimdall.MvcApp.Template",
+  "name": "Heimdall MVC App",
+  "shortName": "heimdall-mvc",
+  "sourceName": "MvcApp",
+  "description": "ASP.NET Core MVC starter using Heimdall for server-driven UI, Razor partial content invocations, safe DOM swapping, and real-time updates without SPA complexity.",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "preferNameDirectory": true
+}
