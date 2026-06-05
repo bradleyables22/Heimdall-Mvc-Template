@@ -1,10 +1,14 @@
 using Heimdall.Server;
 using Heimdall.Server.Rendering;
+using MvcApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddCors();
+builder.Services.AddSingleton<NoteStore>();
+builder.Services.AddSingleton<WeatherForecastStore>();
 
 builder.Services
 	.AddHeimdall(options => 
@@ -30,11 +34,12 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.MapStaticAssets();
+app.UseStaticFiles();
+app.UseCors();
 app.UseRouting();
 
 app.UseAuthorization();
-
-app.MapStaticAssets();
 
 app.UseHeimdall();
 
