@@ -1,9 +1,5 @@
 # Heimdall MVC App Template
 
-Alpha status
-
-Heimdall is currently in alpha. APIs, naming, and patterns may change as the project evolves.
-
 This repository contains the ASP.NET Core MVC starter template for Heimdall. It demonstrates how to use Heimdall with controllers, Razor views, Razor partials, content invocations, safe DOM swaps, and optional SSE without moving the UI workflow into a SPA.
 
 The template application components included in this repository are examples. Keep the pieces that fit your app and remove the rest.
