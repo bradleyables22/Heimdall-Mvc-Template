@@ -10,7 +10,7 @@
 		<SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
 
 		<PackageId>HeimdallFramework.Templates.MvcApp</PackageId>
-		<Version>2.0.3</Version>
+		<Version>3.0.0</Version>
 		<Authors>Bradley Ables</Authors>
 		<Description>Heimdall ASP.NET Core MVC starter template using Razor views, partials, content invocations, safe DOM swapping, and optional SSE.</Description>
 		<PackageTags>heimdall;templates;aspnetcore;mvc;razor;server-driven-ui;html;ssr;hypermedia</PackageTags>
@@ -26,14 +26,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Include="..\MvcApp\**\*"
-				 Exclude="..\MvcApp\**\bin\**;
-						  ..\MvcApp\**\obj\**;
-						  ..\MvcApp\**\.vs\**;
-						  ..\MvcApp\**\.git\**;
-						  ..\MvcApp\**\*.user"
-				 Pack="true"
-				 PackagePath="content/" />
+		<Content Include="..\MvcApp\**\*" Exclude="..\MvcApp\**\bin\**;&#xD;&#xA;						  ..\MvcApp\**\obj\**;&#xD;&#xA;						  ..\MvcApp\**\.vs\**;&#xD;&#xA;						  ..\MvcApp\**\.git\**;&#xD;&#xA;						  ..\MvcApp\**\*.user" Pack="true" PackagePath="content/" />
 	</ItemGroup>
 
 	<ItemGroup>

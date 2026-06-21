@@ -1,6 +1,6 @@
 # Heimdall MVC App Template
 
-This repository contains the ASP.NET Core MVC starter template for Heimdall. It demonstrates how to use Heimdall with controllers, Razor views, Razor partials, content invocations, safe DOM swaps, and optional SSE without moving the UI workflow into a SPA.
+This repository contains the ASP.NET Core MVC starter template for Heimdall. It demonstrates how to use Heimdall with controllers, Razor views, Razor partials, content invocations, safe DOM swaps, out-of-band updates, and Bifrost SSE without moving the UI workflow into a SPA.
 
 The template application components included in this repository are examples. Keep the pieces that fit your app and remove the rest.
 
@@ -57,8 +57,8 @@ https://heimdall-framework.org
 - Closest-form payload examples
 - Server-side validation with partial replacement
 - Out-of-band updates for related UI regions
-- Optional Bifrost SSE for layout-level toasts
-- Lazy-loaded table rows
+- Private-topic Bifrost SSE for layout-level toasts
+- Lazy-loaded table rows using visible triggers
 - Bootstrap and Bootstrap Icons assets
 
 The sample pages mirror the non-MVC Heimdall template:
@@ -131,6 +131,7 @@ using Heimdall.Server.Rendering;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddCors();
 builder.Services.AddAntiforgery();
 
 builder.Services
@@ -148,6 +149,7 @@ app.UseAntiforgery();
 app.UseHttpsRedirection();
 app.MapStaticAssets();
 app.UseStaticFiles();
+app.UseCors();
 app.UseRouting();
 app.UseAuthorization();
 app.UseHeimdall();
@@ -285,6 +287,19 @@ The browser stays light: no client component model, no custom socket handler, an
 
 ---
 
+## Package Versions
+
+The template currently targets:
+
+- `HeimdallFramework.Server` `3.0.0`
+- `HeimdallFramework.Web` `3.0.0`
+- `HeimdallFramework.Bootstrap` `5.0.0`
+- `.NET` `net10.0`
+
+Bootstrap is versioned independently because the helper package tracks Bootstrap itself.
+
+---
+
 ## Building The Template Package
 
 This repository includes a template packer project.
@@ -303,7 +318,7 @@ artifacts/packages/HeimdallFramework.Templates.MvcApp.<version>.nupkg
 You can test the local package before publishing:
 
 ```powershell
-dotnet new install .\artifacts\packages\HeimdallFramework.Templates.MvcApp.2.0.1.nupkg
+dotnet new install .\artifacts\packages\HeimdallFramework.Templates.MvcApp.3.0.0.nupkg
 dotnet new heimdall-mvc -n SmokeTestMvcApp
 dotnet build .\SmokeTestMvcApp\SmokeTestMvcApp.csproj
 ```
