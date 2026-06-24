@@ -10,7 +10,7 @@
 		<SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
 
 		<PackageId>HeimdallFramework.Templates.MvcApp</PackageId>
-		<Version>3.0.3</Version>
+		<Version>3.0.4</Version>
 		<Authors>Bradley Ables</Authors>
 		<Description>Heimdall ASP.NET Core MVC starter template using Razor views, partials, content invocations, safe DOM swapping, and optional SSE.</Description>
 		<PackageTags>heimdall;templates;aspnetcore;mvc;razor;server-driven-ui;html;ssr;hypermedia</PackageTags>
